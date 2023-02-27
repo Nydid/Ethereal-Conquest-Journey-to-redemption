@@ -19,7 +19,7 @@ func _input(event):
 
 func fire():
 	if can_fire and ammo > 0:
-		var bullet_scene = preload("res://bullet.tscn")
+		var bullet_scene = preload("res://Scenes/bullet.tscn")
 		var bullet = bullet_scene.instance()
 		bullet.position = global_position + Vector2(20, 0)
 		get_parent().add_child(bullet)

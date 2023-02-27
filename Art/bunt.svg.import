@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SeekPng.com_black-eyes-png_1001134.png-4678adc736336b83f014c851165569b7.stex"
+path="res://.import/bunt.svg-64da7a7d9e3f1be0f06bb120e0813f29.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SeekPng.com_black-eyes-png_1001134.png"
-dest_files=[ "res://.import/SeekPng.com_black-eyes-png_1001134.png-4678adc736336b83f014c851165569b7.stex" ]
+source_file="res://Art/bunt.svg"
+dest_files=[ "res://.import/bunt.svg-64da7a7d9e3f1be0f06bb120e0813f29.stex" ]
 
 [params]
 
