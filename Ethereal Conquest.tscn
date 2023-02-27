@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://playercontrol.gd" type="Script" id=1]
+[ext_resource path="res://SeekPng.com_black-eyes-png_1001134.png" type="Texture" id=2]
+[ext_resource path="res://weapon.gd" type="Script" id=3]
+[ext_resource path="res://gunt.svg" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://bullet.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 345, 32 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 512, 302 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -57, -13 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( -1.00003, 0.999969 )
+scale = Vector2( 0.182186, 0.14759 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 9, 3 )
+shape = SubResource( 1 )
+
+[node name="Gun" type="Node2D" parent="Player"]
+position = Vector2( 106, 5 )
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="Player/Gun"]
+
+[node name="Sprite" type="Sprite" parent="Player/Gun"]
+position = Vector2( -37, 13 )
+scale = Vector2( 0.363333, 0.28 )
+texture = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 3, 0 )
+scale = Vector2( 0.8583, 0.731928 )
+current = true
+smoothing_enabled = true
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( -27, 71 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+scale = Vector2( 10.6875, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource( 2 )
+
+[node name="Bullet" parent="." instance=ExtResource( 6 )]
+position = Vector2( 44, -7 )
