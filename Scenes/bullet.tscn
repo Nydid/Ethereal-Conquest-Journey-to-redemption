@@ -19,3 +19,5 @@ shape = SubResource( 3 )
 position = Vector2( 0, -11 )
 scale = Vector2( 0.0237499, 0.0115385 )
 texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]

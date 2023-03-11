@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Art/bunt.svg" type="Texture" id=1]
 [ext_resource path="res://Art/SeekPng.com_black-eyes-png_1001134.png" type="Texture" id=2]
 [ext_resource path="res://Art/icon.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/weapon.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/NPC.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/playercontrol.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Art/MicrosoftTeams-image (3).png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.75, 47.375 )
@@ -16,7 +14,7 @@ extents = Vector2( 26.75, 47.375 )
 extents = Vector2( 650, 32 )
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 512, 302 )
+position = Vector2( 625, 291 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( -441, -1 )
@@ -34,23 +32,8 @@ texture = ExtResource( 2 )
 position = Vector2( 2.25, 0.625 )
 shape = SubResource( 1 )
 
-[node name="Gun" type="Node2D" parent="Player"]
-position = Vector2( 41, 0 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Timer" type="Timer" parent="Player/Gun"]
-
-[node name="Sprite2" type="Sprite" parent="Player/Gun"]
-position = Vector2( -7, 8 )
-scale = Vector2( 0.0894006, 0.090909 )
-texture = ExtResource( 8 )
-flip_h = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 3, 0 )
+position = Vector2( 0, 1 )
 scale = Vector2( 0.8583, 0.731928 )
 current = true
 smoothing_enabled = true
@@ -69,7 +52,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Bullet" parent="." instance=ExtResource( 7 )]
-position = Vector2( -382, 0 )
+position = Vector2( -404, -6 )
 bulletSpeed = 50
 
 [node name="Player2" type="KinematicBody2D" parent="."]
