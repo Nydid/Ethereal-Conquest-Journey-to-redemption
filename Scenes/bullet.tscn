@@ -4,22 +4,18 @@
 [ext_resource path="res://Scripts/Bullet.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 7.2111
+radius = 6.19459
 
 [node name="Bullet" type="Area2D"]
-position = Vector2( 315, 312 )
+position = Vector2( 328, 315 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 bulletSpeed = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 32, 1 )
 scale = Vector2( 1.176, 0.583 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 32, -10 )
+position = Vector2( 0, -11 )
 scale = Vector2( 0.0237499, 0.0115385 )
 texture = ExtResource( 1 )
