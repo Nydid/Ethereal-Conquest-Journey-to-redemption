@@ -57,6 +57,7 @@ bulletSpeed = 50
 
 [node name="Player2" type="KinematicBody2D" parent="."]
 position = Vector2( 342, 0 )
+collision_layer = 5
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
