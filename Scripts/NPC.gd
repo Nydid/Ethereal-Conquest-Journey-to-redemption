@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-export(int) var bulletSpeed
 var bullet_scene = preload("res://Scenes/bullet2.tscn")
 var isLive=true
 var health=4
@@ -10,25 +9,24 @@ var enemy_scene = load("res://Scenes/enemy_scene.tscn")
 var shoot
 
 
-func _physics_process(delta):
-	var velocity = Vector2()
+func _physics_process(_delta):
 
+	
 	if Input.is_action_just_pressed("ui_down2"):
 		if red_c == true:
 			$CollisionShape2D.set_disabled(true)
 			red_c = false
 		else:
 			$CollisionShape2D.set_disabled(false)
-			
 			red_c = true
-	var collision = move_and_collide(velocity * delta)
+			
 	if !isLive:
 		return
 	shoot =Input.is_action_just_pressed("fire2") 
 	if shoot:
 		fire()
 		
-func hit_by_bullet(pos):
+func hit_by_bullet(_pos):
 	if !isLive:
 		return
 	health -=1
