@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 26.75, 47.375 )
+extents = Vector2( 26.75, 48.375 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 650, 32 )
@@ -28,7 +28,7 @@ scale = Vector2( 0.182186, 0.14759 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 2.25, 0.625 )
+position = Vector2( 2.25, 1.625 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
