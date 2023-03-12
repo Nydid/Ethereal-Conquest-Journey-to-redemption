@@ -11,9 +11,6 @@ extents = Vector2( 26.75, 47.375 )
 position = Vector2( 342, 0 )
 collision_layer = 5
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1, 1 )
