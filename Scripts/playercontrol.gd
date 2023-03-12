@@ -15,6 +15,7 @@ func _physics_process(delta):
 	shoot =Input.is_action_just_pressed("fire")
 	if shoot:
 		fire()
+		
 func fire():
 	var new_bullet=bullet_scene.instance() 
 	new_bullet.position = global_position + Vector2(40, 0)
