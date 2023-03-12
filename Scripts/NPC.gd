@@ -3,6 +3,8 @@ extends KinematicBody2D
 export var speed = 100
 var isLive=true
 var health=2
+var enemy
+#var enemy_scene = load("res://Scenes/enemy_scene.tscn").instance()
 func _physics_process(delta):
 	var velocity = Vector2()
 
@@ -13,11 +15,20 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if !isLive:
 		return 
-func hit_by_bullet(pos):
+func hit_by_bullet():
 	if !isLive:
 		return
 	health -=1
 	
 	if health<0 :
 		isLive=false
+#		removeenemy()
 		
+#func spawnenemy():
+#	enemy = enemy_scene.instance()
+#	add_child(enemy)
+	
+#func removeenemy():
+#	if enemy: 
+#		enemy.queue_free()
+#	spawnenemy()
