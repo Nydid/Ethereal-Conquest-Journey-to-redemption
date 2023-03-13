@@ -9,7 +9,7 @@ radius = 6.19459
 [node name="Bullet" type="Area2D"]
 position = Vector2( 328, 315 )
 script = ExtResource( 2 )
-bulletSpeed = 200
+bulletSpeed = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.176, 0.583 )

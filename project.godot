@@ -14,6 +14,10 @@ config/name="Godot Projet Inter"
 run/main_scene="res://Scenes/Ethereal Conquest.tscn"
 config/icon="res://Art/icon.png"
 
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

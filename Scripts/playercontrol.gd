@@ -7,11 +7,13 @@ var health = 3
 var isLive=true
 var red_c=true
 
+func _ready():
+	GameManager.player=self
+	
 func _physics_process(_delta):
 	
-	
 	if Input.is_action_just_pressed("ui_down"):
-		if red_c == true:
+		if red_c == true:	
 			$CollisionShape2D.set_disabled(true)
 			red_c = false
 		else:
@@ -37,6 +39,9 @@ func hit_by_bullet(_pos):
 	if health<0 :
 		isLive=false
 		queue_free()
+		
+func call_from_NPC():
+	print("Zombie")
 	
 	
 	  

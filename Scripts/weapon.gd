@@ -28,4 +28,3 @@ func fire():
 		$Timer.start()
 		
 		
-
