@@ -6,8 +6,9 @@ var enemy_scene = load("res://Scenes/enemy_scene.tscn")
 var isLive = true
 var health = 4
 var red_c = true
+var enemy_killed = 0
+var next_enemy_time = 0.0
 var enemy
-
 var shoot_timer = 0.0
 var crouch_timer = 0.0
 
@@ -29,6 +30,12 @@ func _physics_process(delta):
 		shoot_timer = 0.0
 		fire()
 
+	# Check if it's time to spawn the next enemy
+	if enemy_killed > 0 and OS.get_ticks_msec() > next_enemy_time:
+		spawnenemy()
+		enemy_killed += 1
+		next_enemy_time = OS.get_ticks_msec() + 1000
+
 # Toggle crouch
 func toggle_crouch():
 	$CollisionShape2D.set_disabled(!red_c)
@@ -48,12 +55,14 @@ func hit_by_bullet(_pos):
 	health -= 1
 	if health < 0:
 		isLive = false
+		enemy_killed += 1
+		spawnenemy()
 		queue_free()
 
 # Spawn enemy
 func spawnenemy():
-	enemy = enemy_scene.instance()
-	add_child(enemy)
+	var new_enemy = enemy_scene.instance()
+	add_child(new_enemy)
 
 # Remove enemy
 func removeenemy():

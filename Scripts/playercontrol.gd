@@ -7,33 +7,39 @@ var health = 3
 var isLive=true
 var is_crouching = false
 var red_c=true
+var original_sprite_size = Vector2(0, 0)
 
 func _ready():
 	GameManager.player=self
-	
+	original_sprite_size = $Sprite.texture.get_size()
+
 func _physics_process(_delta):
+	
 	if Input.is_action_pressed("ui_down"):
-		set_crouch(true)
+		crouch()
 	else:
-		set_crouch(false)
+		stand_up()
 			
 	if !isLive:
 		return
-	shoot =Input.is_action_just_pressed("fire")
+	shoot = Input.is_action_just_pressed("fire")
 	if shoot:
 		fire()
 	
-func set_crouch(crouch):
-	if crouch:
-		if red_c:
-			$CollisionShape2D.set_disabled(true)
-			red_c = false
-			is_crouching = true
-	else:
-		if !red_c:
-			$CollisionShape2D.set_disabled(false)
-			red_c = true
-			is_crouching = false
+func crouch():
+	if red_c:
+		var new_size = original_sprite_size
+		new_size.y /= 2
+		#$Sprite.texture_rect_size = new_size
+		$CollisionShape2D.set_disabled(true)
+		red_c = false
+
+func stand_up():
+	if !red_c:
+		#$Sprite.texture_rect_size = original_sprite_size
+		$CollisionShape2D.set_disabled(false)
+		red_c = true
+
 func fire():
 	var new_bullet=bullet_scene.instance() 
 	new_bullet.position = global_position + Vector2(40, 0)
@@ -50,6 +56,3 @@ func hit_by_bullet(_pos):
 		
 func call_from_NPC():
 	print("Zombie")
-	
-	
-	  

@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Godot Projet Inter"
 run/main_scene="res://Scenes/Ethereal Conquest.tscn"
-config/icon="res://Art/icon.png"
 
 [autoload]
 
