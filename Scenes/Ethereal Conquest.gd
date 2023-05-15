@@ -11,17 +11,14 @@ func _ready():
 
 # Spawn enemy
 func spawn_enemy():
-	if enemy == null:
-		enemy = enemy_scene.instance()
-		add_child(enemy)
-		#HERE WE NEED OUR NEWLY SPAWNED ENEMY TO HAVE THEIR SIGNAL CONNECTED TO OUR NODE2D TOP LEVEL SCRIPT SO WE CAN KEEP RESPAWNING UPON DEATH
-		enemy.connect("enemy_killed", self, "_on_enemy_killed")
+	enemy = enemy_scene.instance()
+	add_child(enemy)
+	#HERE WE NEED OUR NEWLY SPAWNED ENEMY TO HAVE THEIR SIGNAL CONNECTED TO OUR NODE2D TOP LEVEL SCRIPT SO WE CAN KEEP RESPAWNING UPON DEATH
+	enemy.connect("enemy_killed", self, "_on_enemy_killed")
 
-# Remove enemy
-func remove_enemy():
-		enemy.queue_free()
 
 # THIS IS THE METHOD THAT RESPONDS TO THE ENEMY_KILLED SIGNAL WHEN IT IS EMITTED
 func _on_enemy_killed():
-  remove_enemy()
-  spawn_enemy()
+	print("I received the enemy killed signal")
+	yield(get_tree().create_timer(1.0), "timeout")
+	spawn_enemy()

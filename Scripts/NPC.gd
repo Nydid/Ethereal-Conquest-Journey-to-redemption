@@ -15,7 +15,6 @@ var crouch_timer = 0.0
 
 # Physics process
 func _physics_process(delta):
-	
 	shoot_timer += delta
 	crouch_timer += delta
 
