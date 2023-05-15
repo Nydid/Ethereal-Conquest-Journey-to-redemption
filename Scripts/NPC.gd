@@ -1,22 +1,21 @@
 extends KinematicBody2D
 
+#HERE IS THE FIRST ADDED LINE WHERE YOU DECLARE THE SIGNAL
+signal enemy_killed
+
 var bullet_scene = preload("res://Scenes/bullet2.tscn")
-var enemy_scene = load("res://Scenes/enemy_scene.tscn")
+
 
 var isLive = true
 var health = 4
 var red_c = true
 var enemy_killed = 0
-var next_enemy_time = 0.0
-var enemy
 var shoot_timer = 0.0
 var crouch_timer = 0.0
 
 # Physics process
 func _physics_process(delta):
-	if !isLive:
-		return
-
+	
 	shoot_timer += delta
 	crouch_timer += delta
 
@@ -29,12 +28,6 @@ func _physics_process(delta):
 	if shoot_timer >= 1.0:
 		shoot_timer = 0.0
 		fire()
-
-	# Check if it's time to spawn the next enemy
-	if enemy_killed > 0 and OS.get_ticks_msec() > next_enemy_time:
-		spawnenemy()
-		enemy_killed += 1
-		next_enemy_time = OS.get_ticks_msec() + 1000
 
 # Toggle crouch
 func toggle_crouch():
@@ -56,16 +49,6 @@ func hit_by_bullet(_pos):
 	if health < 0:
 		isLive = false
 		enemy_killed += 1
-		spawnenemy()
+		#HERE IS THE SECOND ADDED LINE WHERE THE ENEMY EMITS THE             SIGNAL
+		emit_signal("enemy_killed")
 		queue_free()
-
-# Spawn enemy
-func spawnenemy():
-	var new_enemy = enemy_scene.instance()
-	add_child(new_enemy)
-
-# Remove enemy
-func removeenemy():
-	if enemy:
-		enemy.queue_free()
-	spawnenemy()

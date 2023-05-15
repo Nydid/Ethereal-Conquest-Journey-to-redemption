@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MicrosoftTeams-image (3).png-bda1ec7534bdd6ab0a575be2bebb93e8.stex"
+path="res://.import/sonic.png-984b46d05b7e16334d937c5da4eeb58f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/MicrosoftTeams-image (3).png"
-dest_files=[ "res://.import/MicrosoftTeams-image (3).png-bda1ec7534bdd6ab0a575be2bebb93e8.stex" ]
+source_file="res://Art/sonic.png"
+dest_files=[ "res://.import/sonic.png-984b46d05b7e16334d937c5da4eeb58f.stex" ]
 
 [params]
 

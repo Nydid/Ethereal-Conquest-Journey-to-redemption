@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SeekPng.com_black-eyes-png_1001134.png-e8c17b2548227b56a434b25e6f5d85c7.stex"
+path="res://.import/gun.png-bb2ef40db0ce5994639bc9048afd5cfd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/SeekPng.com_black-eyes-png_1001134.png"
-dest_files=[ "res://.import/SeekPng.com_black-eyes-png_1001134.png-e8c17b2548227b56a434b25e6f5d85c7.stex" ]
+source_file="res://Art/gun.png"
+dest_files=[ "res://.import/gun.png-bb2ef40db0ce5994639bc9048afd5cfd.stex" ]
 
 [params]
 
