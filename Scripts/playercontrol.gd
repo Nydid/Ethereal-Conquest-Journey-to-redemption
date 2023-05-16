@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 var bullet_scene = preload("res://Scenes/bullet.tscn")
-
+var max_bullets = 6
+var current_bullets = max_bullets
 var shoot
 var health = 3
 var isLive=true
@@ -19,15 +20,17 @@ func _physics_process(_delta):
 		crouch()
 	else:
 		stand_up()
-		if shoot:
+		if shoot and current_bullets > 0:
 			fire()
+			current_bullets -= 1
 			
+	if Input.is_action_just_pressed("ui_up"):
+		reload()
+
 	if !isLive:
 		return
 	shoot = Input.is_action_just_pressed("fire")
 
-	
-	
 func crouch():
 	if red_c:
 		var new_size = original_sprite_size
@@ -56,5 +59,5 @@ func hit_by_bullet(_pos):
 		isLive=false
 		queue_free()
 		
-func call_from_NPC():
-	print("Zombie")
+func reload():
+	current_bullets = max_bullets
