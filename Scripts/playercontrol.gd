@@ -19,12 +19,14 @@ func _physics_process(_delta):
 		crouch()
 	else:
 		stand_up()
+		if shoot:
+			fire()
 			
 	if !isLive:
 		return
 	shoot = Input.is_action_just_pressed("fire")
-	if shoot:
-		fire()
+
+	
 	
 func crouch():
 	if red_c:
