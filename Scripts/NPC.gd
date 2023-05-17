@@ -51,3 +51,4 @@ func hit_by_bullet(_pos):
 		#HERE IS THE SECOND ADDED LINE WHERE THE ENEMY EMITS THE             SIGNAL
 		emit_signal("enemy_killed")
 		queue_free()
+		

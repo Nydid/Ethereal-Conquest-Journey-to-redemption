@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var bullet_scene = preload("res://Scenes/bullet.tscn")
+
 var max_bullets = 6
 var current_bullets = max_bullets
 var shoot
@@ -10,9 +11,13 @@ var is_crouching = false
 var red_c=true
 var original_sprite_size = Vector2(0, 0)
 
+signal player_dead
+
+	
 func _ready():
 	GameManager.player=self
 	original_sprite_size = $Sprite.texture.get_size()
+	
 
 func _physics_process(_delta):
 	
@@ -23,9 +28,11 @@ func _physics_process(_delta):
 		if shoot and current_bullets > 0:
 			fire()
 			current_bullets -= 1
+			get_parent().get_node("balle").text = var2str(get_parent().get_node("Player").current_bullets)
 			
 	if Input.is_action_just_pressed("ui_up"):
 		reload()
+		get_parent().get_node("balle").text = var2str(get_parent().get_node("Player").current_bullets)
 
 	if !isLive:
 		return
@@ -54,9 +61,11 @@ func hit_by_bullet(_pos):
 	if !isLive:
 		return
 	health -=1
+	get_parent().get_node("health").text = var2str(get_parent().get_node("Player").health)
 	
-	if health<0 :
+	if health<1 :
 		isLive=false
+		emit_signal("player_dead")
 		queue_free()
 		
 func reload():
