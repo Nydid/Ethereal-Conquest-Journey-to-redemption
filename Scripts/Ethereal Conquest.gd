@@ -2,6 +2,7 @@ extends Node2D
 
 var enemy_scene = preload("res://Scenes/enemy_scene.tscn")
 var game_over = preload("res://Scenes/GameOver.tscn")
+
 #HERE WE GET A REFERENCE TO OUR INITIAL ENEMY IN THE SCENE
 onready var enemy = $Player2
 onready var player = $Player
@@ -14,7 +15,6 @@ func _ready():
 
 # Spawn enemy
 func spawn_enemy():
-	
 	enemy = enemy_scene.instance()
 	add_child(enemy)
 	#HERE WE NEED OUR NEWLY SPAWNED ENEMY TO HAVE THEIR SIGNAL CONNECTED TO OUR NODE2D TOP LEVEL SCRIPT SO WE CAN KEEP RESPAWNING UPON DEATH

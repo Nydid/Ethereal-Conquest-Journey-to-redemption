@@ -28,11 +28,11 @@ func _physics_process(_delta):
 		if shoot and current_bullets > 0:
 			fire()
 			current_bullets -= 1
-			get_parent().get_node("balle").text = var2str(get_parent().get_node("Player").current_bullets)
+			get_parent().get_node("Lives&Ammo").get_node("balle").text = var2str(get_parent().get_node("Player").current_bullets)
 			
 	if Input.is_action_just_pressed("ui_up"):
 		reload()
-		get_parent().get_node("balle").text = var2str(get_parent().get_node("Player").current_bullets)
+		get_parent().get_node("Lives&Ammo").get_node("balle").text = var2str(get_parent().get_node("Player").current_bullets)
 
 	if !isLive:
 		return
@@ -61,7 +61,7 @@ func hit_by_bullet(_pos):
 	if !isLive:
 		return
 	health -=1
-	get_parent().get_node("health").text = var2str(get_parent().get_node("Player").health)
+	get_parent().get_node("Lives&Ammo").get_node("health").text = var2str(get_parent().get_node("Player").health)
 	
 	if health<1 :
 		isLive=false
