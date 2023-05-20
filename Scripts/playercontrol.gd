@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 
-var max_bullets = 6
+var max_bullets = 8
 var current_bullets = max_bullets
 var shoot
 var health = 3
@@ -42,13 +42,15 @@ func crouch():
 	if red_c:
 		var new_size = original_sprite_size
 		new_size.y /= 2
-		#$Sprite.texture_rect_size = new_size
+		$Sprite.texture = load("res://Art/CrouchingChara.png")
+		$Sprite.position.y = 54 
 		$CollisionShape2D.set_disabled(true)
 		red_c = false
 
 func stand_up():
 	if !red_c:
-		#$Sprite.texture_rect_size = original_sprite_size
+		$Sprite.texture = load("res://Art/StandingChara.png")
+		$Sprite.position.y = 32
 		$CollisionShape2D.set_disabled(false)
 		red_c = true
 

@@ -5,30 +5,33 @@
 [ext_resource path="res://Scripts/NPC.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 26.75, 47.375 )
+extents = Vector2( 29.875, 49.1875 )
 
 [node name="Player2" type="KinematicBody2D"]
-position = Vector2( 342, 0 )
+position = Vector2( 342, -14 )
 collision_layer = 5
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1, 1 )
+position = Vector2( 21, 13 )
 scale = Vector2( 0.182186, 0.14759 )
 texture = ExtResource( 1 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.5, 1.25 )
+position = Vector2( 20, 12 )
 shape = SubResource( 1 )
 
 [node name="Gun" type="Node2D" parent="."]
-position = Vector2( -120, 5 )
+position = Vector2( -132, 9 )
 
 [node name="Timer" type="Timer" parent="Gun"]
 
 [node name="Sprite" type="Sprite" parent="Gun"]
-position = Vector2( 64, 14 )
+position = Vector2( 96, 10 )
 scale = Vector2( 0.363333, 0.28 )
 texture = ExtResource( 2 )
 flip_h = true
