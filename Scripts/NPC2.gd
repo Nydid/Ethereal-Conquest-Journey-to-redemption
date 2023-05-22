@@ -21,7 +21,10 @@ func _physics_process(delta):
 	# Crouch every 2 seconds
 	if crouch_timer >= 2.0:
 		crouch_timer = 0.0
+		$Sprite.texture = load("res://Art/earthcrouch.png")
 		toggle_crouch()
+	else :
+		$Sprite.texture = load("res://Art/earthstand.png")
 
 	# Shoot every 1 second
 	if shoot_timer >= 1.0:
@@ -48,7 +51,7 @@ func hit_by_bullet(_pos):
 	if health < 0:
 		isLive = false
 		enemy_killed += 1
-		#HERE IS THE SECOND ADDED LINE WHERE THE ENEMY EMITS THE SIGNAL
+		#HERE IS THE SECOND ADDED LINE WHERE THE ENEMY EMITS THE             SIGNAL
 		emit_signal("enemy_killed")
 		queue_free()
 	if enemy_killed > 3:

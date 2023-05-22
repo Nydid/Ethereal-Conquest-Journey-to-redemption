@@ -43,7 +43,8 @@ func crouch():
 		var new_size = original_sprite_size
 		new_size.y /= 2
 		$Sprite.texture = load("res://Art/CrouchingChara.png")
-		$Sprite.position.y = 54 
+		$Sprite.position.y = 54
+		$Ourfinalgun.position.y = 45
 		$CollisionShape2D.set_disabled(true)
 		red_c = false
 
@@ -51,6 +52,7 @@ func stand_up():
 	if !red_c:
 		$Sprite.texture = load("res://Art/StandingChara.png")
 		$Sprite.position.y = 32
+		$Ourfinalgun.position.y = 1
 		$CollisionShape2D.set_disabled(false)
 		red_c = true
 

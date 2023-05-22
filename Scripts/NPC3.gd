@@ -17,14 +17,15 @@ var crouch_timer = 0.0
 func _physics_process(delta):
 	shoot_timer += delta
 	crouch_timer += delta
+	$Sprite.texture = load("res://Art/hellstand.png")
 
 	# Crouch every 2 seconds
 	if crouch_timer >= 2.0:
 		crouch_timer = 0.0
-		$Sprite.texture = load("res://Art/enemyheavenCrouch.png")
+		$Sprite.texture = load("res://Art/hellcrouch.png")
 		toggle_crouch()
 	else :
-		$Sprite.texture = load("res://Art/enemyheavenStand.png")
+		$Sprite.texture = load("res://Art/hellstand.png")
 
 	# Shoot every 1 second
 	if shoot_timer >= 1.0:

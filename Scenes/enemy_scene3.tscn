@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Art/enemyheavenstand.png" type="Texture" id=1]
+[ext_resource path="res://Art/hellstand.png" type="Texture" id=1]
 [ext_resource path="res://Art/bunt.svg" type="Texture" id=2]
-[ext_resource path="res://Scripts/NPC.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/NPC3.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.4375, 52.5938 )
@@ -13,10 +13,9 @@ collision_layer = 5
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 23, 22 )
-scale = Vector2( -0.0567261, 0.051147 )
+position = Vector2( 14.5243, 28.8865 )
+scale = Vector2( -0.0653689, 0.0634053 )
 texture = ExtResource( 1 )
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 19.5625, 26.5938 )

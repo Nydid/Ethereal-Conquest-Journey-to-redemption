@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_scene = preload("res://Scenes/enemy_scene.tscn")
+var enemy_scene = preload("res://Scenes/enemy_scene3.tscn")
 var game_over = preload("res://Scenes/GameOver.tscn")
 var enemy_killed = 0
 #HERE WE GET A REFERENCE TO OUR INITIAL ENEMY IN THE SCENE
