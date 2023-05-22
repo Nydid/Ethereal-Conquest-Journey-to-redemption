@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/enemy_scene3.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Art/StandingChara.png" type="Texture" id=2]
+[ext_resource path="res://Art/hellstand.png" type="Texture" id=2]
 [ext_resource path="res://Art/hellbackground.png" type="Texture" id=3]
 [ext_resource path="res://Art/Genfer.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Ethereal Conquest3.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/playercontrol.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/playercontrol3.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Art/ourfinalgun.png" type="Texture" id=9]
 
@@ -29,8 +29,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( -11, 32 )
-scale = Vector2( 0.0484987, 0.0489885 )
+position = Vector2( -7.3354, 27.7285 )
+scale = Vector2( 0.0534812, 0.0536953 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -111,6 +111,17 @@ margin_top = 211.0
 margin_right = -295.0
 margin_bottom = 225.0
 rect_scale = Vector2( 4.90138, 5.65753 )
-text = "6"
+text = "8"
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 333, -30 )
+
+[node name="manual" type="Label" parent="."]
+margin_left = -50.0
+margin_top = 151.0
+margin_right = 114.0
+margin_bottom = 199.0
+rect_scale = Vector2( 2.40477, 2.73314 )
+text = "Shoot = Enter
+Crouch = Down Arrow Key
+Reload = Up Arrow Key"

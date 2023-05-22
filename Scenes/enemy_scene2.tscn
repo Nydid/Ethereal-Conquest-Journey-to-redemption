@@ -8,7 +8,7 @@
 extents = Vector2( 30.4375, 52.5938 )
 
 [node name="Player2" type="KinematicBody2D"]
-position = Vector2( 333, -35 )
+position = Vector2( 333, -27 )
 collision_layer = 5
 script = ExtResource( 3 )
 
@@ -23,11 +23,11 @@ position = Vector2( 19.5625, 26.5938 )
 shape = SubResource( 1 )
 
 [node name="Gun" type="Node2D" parent="."]
-position = Vector2( -132, 9 )
+position = Vector2( -132, -1 )
 
 [node name="Timer" type="Timer" parent="Gun"]
 
-[node name="Sprite" type="Sprite" parent="Gun"]
+[node name="shotgun" type="Sprite" parent="Gun"]
 position = Vector2( 96, 0 )
 scale = Vector2( 0.363333, 0.28 )
 texture = ExtResource( 2 )

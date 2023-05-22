@@ -31,3 +31,13 @@ margin_left = -199.0
 margin_top = 95.0
 margin_right = -146.0
 margin_bottom = 115.0
+
+[node name="manual" type="Label" parent="."]
+margin_left = 524.0
+margin_top = 441.0
+margin_right = 688.0
+margin_bottom = 489.0
+rect_scale = Vector2( 2.40477, 2.73314 )
+text = "Shoot = Enter
+Crouch = Down Arrow Key
+Reload = Up Arrow Key"
