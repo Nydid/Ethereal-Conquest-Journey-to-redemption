@@ -8,7 +8,7 @@ var bullet_scene = preload("res://Scenes/bullet2.tscn")
 var isLive = true
 var health = 4
 var red_c = true
-var enemy_killed = 0
+var enemies_killed = 0
 var shoot_timer = 0.0
 var crouch_timer = 0.0
 var isCrouched = false
@@ -65,7 +65,7 @@ func hit_by_bullet(_pos):
 	health -= 1
 	if health < 0:
 		isLive = false
-		enemy_killed += 1
+		enemies_killed += 1
 		# Emit the signal when the enemy is killed
 		emit_signal("enemy_killed")
 		queue_free()
