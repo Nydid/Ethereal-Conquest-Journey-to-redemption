@@ -1,43 +1,43 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://StartGame.gd" type="Script" id=1]
-[ext_resource path="res://Art/startgame5.png" type="Texture" id=2]
+[ext_resource path="res://Art/startgame5.png" type="Texture2D" id=2]
 
 [node name="StartGame" type="Control"]
-margin_right = 1027.0
-margin_bottom = 603.0
+offset_right = 1027.0
+offset_bottom = 603.0
 script = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 
-[node name="StartScreen" type="Sprite" parent="Node2D/Sprite"]
+[node name="StartScreen" type="Sprite2D" parent="Node2D/Sprite2D"]
 position = Vector2( 512, 298 )
 scale = Vector2( 0.801684, 0.803234 )
 texture = ExtResource( 2 )
 
 [node name="Start" type="Label" parent="Node2D"]
-margin_left = 320.0
-margin_top = 251.0
-margin_right = 406.0
-margin_bottom = 265.0
-rect_scale = Vector2( 3.80382, 4.55684 )
+offset_left = 320.0
+offset_top = 251.0
+offset_right = 406.0
+offset_bottom = 265.0
+scale = Vector2( 3.80382, 4.55684 )
 text = "Shoot to Start"
 
 [node name="Shoot to Start" type="Button" parent="Node2D"]
 visible = false
-margin_left = -199.0
-margin_top = 95.0
-margin_right = -146.0
-margin_bottom = 115.0
+offset_left = -199.0
+offset_top = 95.0
+offset_right = -146.0
+offset_bottom = 115.0
 
 [node name="manual" type="Label" parent="."]
-margin_left = 524.0
-margin_top = 441.0
-margin_right = 688.0
-margin_bottom = 489.0
-rect_scale = Vector2( 2.40477, 2.73314 )
+offset_left = 524.0
+offset_top = 441.0
+offset_right = 688.0
+offset_bottom = 489.0
+scale = Vector2( 2.40477, 2.73314 )
 text = "Shoot = Enter
 Crouch = Down Arrow Key
 Reload = Up Arrow Key"

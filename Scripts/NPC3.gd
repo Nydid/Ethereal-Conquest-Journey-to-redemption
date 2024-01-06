@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 # Declare the signal
 signal enemy_killed
@@ -26,14 +26,14 @@ func _physics_process(delta):
 		crouch_timer = 0.0
 		toggle_crouch()
 	if isCrouched:
-		$Sprite.texture = crouch_texture
-		$Sprite.position.y = 50
+		$Sprite2D.texture = crouch_texture
+		$Sprite2D.position.y = 50
 		$Gun/shotgun.position.y = 40
 	else:
-		$Sprite.texture = stand_up_texture
+		$Sprite2D.texture = stand_up_texture
 
 		$Gun/shotgun.position.y = 0
-		$Sprite.position.y = 22
+		$Sprite2D.position.y = 22
 
 	# Shoot every 1 second
 	if shoot_timer >= 0.75 and !isCrouched:
@@ -53,7 +53,7 @@ func toggle_crouch():
 
 # Fire a bullet
 func fire():
-	var new_bullet = bullet_scene.instance()
+	var new_bullet = bullet_scene.instantiate()
 	new_bullet.position = global_position + Vector2(-40, 0)
 	add_child(new_bullet)
 
