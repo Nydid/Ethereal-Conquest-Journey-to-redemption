@@ -16,7 +16,8 @@ func is_outside_view_bounds():
 
 
 func _on_Bullet_body_entered(body):
-	if body.get_collision_layer_value(2):
-		body.hit_by_bullet(body.position)
+	body.hit_by_bullet(body.position)
+	#if body.get_collision_layer_value(2):
+		#body.hit_by_bullet(body.position)
 	queue_free()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cypkcq0r1rqgq"]
+[gd_scene load_steps=12 format=3 uid="uid://cypkcq0r1rqgq"]
 
 [ext_resource type="PackedScene" path="res://Scenes/enemy_scene2.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://cqcwq2bs1xoqa" path="res://Art/earthstand.png" id="2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/playercontrol2.gd" id="6"]
 [ext_resource type="PackedScene" path="res://Scenes/bullet.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://ca7ac54ev2ou" path="res://Art/ourfinalgun.png" id="8"]
+[ext_resource type="PackedScene" uid="uid://bpw0px1mny0x1" path="res://Scenes/lives&ammo.tscn" id="8_0fwkp"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(75.875, 98.25)
@@ -66,57 +67,7 @@ position = Vector2(-67, -472)
 scale = Vector2(3.49626, 5.70984)
 texture = ExtResource("4")
 
-[node name="Lives&Ammo" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="health" type="Label" parent="Lives&Ammo"]
-layout_mode = 0
-offset_left = -319.0
-offset_top = 140.0
-offset_right = -309.0
-offset_bottom = 154.0
-scale = Vector2(5.15884, 4.46455)
-text = "3"
-
-[node name="Vie" type="Label" parent="Lives&Ammo"]
-layout_mode = 0
-offset_left = -487.0
-offset_top = 139.0
-offset_right = -446.0
-offset_bottom = 153.0
-scale = Vector2(3.68148, 4.45052)
-text = "Lives :"
-
-[node name="Ammo" type="Label" parent="Lives&Ammo"]
-layout_mode = 0
-offset_left = -496.0
-offset_top = 220.0
-offset_right = -445.0
-offset_bottom = 234.0
-scale = Vector2(3.60154, 4.23634)
-text = "Ammo :"
-
-[node name="balle" type="Label" parent="Lives&Ammo"]
-layout_mode = 0
-offset_left = -305.0
-offset_top = 211.0
-offset_right = -295.0
-offset_bottom = 225.0
-scale = Vector2(4.90138, 5.65753)
-text = "8"
+[node name="Lives&Ammo" parent="." instance=ExtResource("8_0fwkp")]
 
 [node name="Player2" parent="." instance=ExtResource("1")]
 position = Vector2(334, -28)
-
-[node name="manual" type="Label" parent="."]
-offset_left = -40.0
-offset_top = 149.0
-offset_right = 124.0
-offset_bottom = 197.0
-scale = Vector2(2.40477, 2.73314)
-text = "Shoot = Enter
-Crouch = Down Arrow Key
-Reload = Up Arrow Key"
