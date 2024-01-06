@@ -14,8 +14,8 @@ var crouch_timer:float = 0.0
 var isCrouched:bool = false
 
 # Declare the crouch and stand up textures
-var crouch_texture = load("res://Art/enemyheavenCrouch.png")
-var stand_up_texture = load("res://Art/enemyheavenStand.png")
+var crouch_texture = load("res://Art/enemyheavencrouch.png")
+var stand_up_texture = load("res://Art/enemyheavenstand.png")
 
 # Physics process
 func _physics_process(delta):

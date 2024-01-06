@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd1wm1ij4hgwy"]
+[gd_scene load_steps=4 format=3 uid="uid://dd1wm1ij4hgwy"]
 
 [ext_resource type="Script" path="res://StartGame.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dm45v53kpniq6" path="res://Art/startgame5.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://brm14io187spy" path="res://Art/ethereal-title.png" id="3_0iwgv"]
 
 [node name="StartGame" type="Control"]
 layout_mode = 3
@@ -34,3 +35,12 @@ scale = Vector2(1.98244, 2.25314)
 text = "Shoot = Enter
 Crouch = Down Arrow Key
 Reload = Up Arrow Key"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 113.0
+offset_right = 2322.0
+offset_bottom = 1137.0
+scale = Vector2(0.240002, 0.240002)
+texture = ExtResource("3_0iwgv")

@@ -12,13 +12,14 @@ grow_vertical = 2
 script = ExtResource("1_8ghjv")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.34902, 0.411765, 0.513726, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
