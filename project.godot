@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.2")
 
 GameManager="*res://Scripts/GameManager.gd"
 
+[display]
+
+window/size/viewport_width=1020
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

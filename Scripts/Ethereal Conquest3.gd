@@ -29,7 +29,7 @@ func _on_enemy_killed():
 	enemies_killed += 1
 	if enemies_killed > 3 :
 		get_tree().create_timer(3.0)
-		get_tree().change_scene_to_file("res://Scenes/StartGame.tscn")
+		get_tree().change_scene_to_file("res://Scenes/GameBeat.tscn")
 	
 func gameover():
 	var game_over_node = game_over.instantiate()

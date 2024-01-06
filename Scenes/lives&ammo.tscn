@@ -44,10 +44,10 @@ text = "8"
 
 [node name="manual" type="Label" parent="."]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 126.0
-offset_right = 241.0
-offset_bottom = 201.0
+offset_left = 10.0
+offset_top = 118.0
+offset_right = 211.0
+offset_bottom = 193.0
 scale = Vector2(2.40477, 2.73314)
 text = "Shoot = Enter
 Crouch = Down Arrow Key
