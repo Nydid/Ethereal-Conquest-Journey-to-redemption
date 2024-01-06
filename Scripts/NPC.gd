@@ -5,13 +5,13 @@ signal enemy_killed
 
 var bullet_scene = preload("res://Scenes/bullet2.tscn")
 
-var isLive = true
-var health = 4
-var red_c = true
-var enemies_killed = 0
-var shoot_timer = 0.0
-var crouch_timer = 0.0
-var isCrouched = false
+var isLive:bool = true
+var health:int = 4
+var red_c:bool = true
+var enemies_killed:int = 0
+var shoot_timer:float = 0.0
+var crouch_timer:float = 0.0
+var isCrouched:bool = false
 
 # Declare the crouch and stand up textures
 var crouch_texture = load("res://Art/enemyheavenCrouch.png")

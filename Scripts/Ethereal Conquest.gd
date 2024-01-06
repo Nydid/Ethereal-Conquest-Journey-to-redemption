@@ -2,7 +2,7 @@ extends Node2D
 
 var enemy_scene = preload("res://Scenes/enemy_scene.tscn")
 var game_over = preload("res://Scenes/GameOver.tscn")
-var enemy_killed = 0
+var enemies_killed:int = 0
 #HERE WE GET A REFERENCE TO OUR INITIAL ENEMY IN THE SCENE
 @onready var enemy = $Player2
 @onready var player = $Player
@@ -26,8 +26,8 @@ func _on_enemy_killed():
 	print("I received the enemy killed signal")
 	await get_tree().create_timer(1.0).timeout
 	spawn_enemy()
-	enemy_killed += 1
-	if enemy_killed > 3 :
+	enemies_killed += 1
+	if enemies_killed > 3 :
 		get_tree().create_timer(3.0)
 		get_tree().change_scene_to_file("res://Scenes/SceneEarth.tscn")
 	

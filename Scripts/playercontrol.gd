@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 
-var max_bullets = 8
+var max_bullets:int = 8
 var current_bullets = max_bullets
 var shoot
-var health = 3
-var isLive=true
-var is_crouching = false
-var red_c=true
-var original_sprite_size = Vector2(0, 0)
+var health:int = 3
+var isLive:bool=true
+var is_crouching:bool = false
+var red_c:bool=true
+var original_sprite_size:Vector2 = Vector2(0, 0)
 
 signal player_dead
 

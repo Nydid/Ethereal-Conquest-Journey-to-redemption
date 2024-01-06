@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var fire_rate = 1007
-var ammo = 10
-var can_fire = true
+@export var fire_rate:int = 1007
+var ammo:int = 10
+var can_fire:bool = true
 
 func _ready():
 	$Timer.wait_time = fire_rate
