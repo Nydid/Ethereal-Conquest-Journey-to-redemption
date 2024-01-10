@@ -1,22 +1,22 @@
-tool
+@tool
 extends Control
 
 const SERCOMM = preload("res://addons/GDSerCommDock/bin/GDSerComm.gdns")
-onready var PORT = SERCOMM.new()
+@onready var PORT = SERCOMM.new()
 
 #helper node
-onready var com=$Com
+@onready var com=$Com
 #use it as node since script alone won't have the editor help
 
 var port
 
-onready var portButton = $"VBoxContainer/PortHBoxContainer/PortOptionButton"
-onready var baudButton = $"VBoxContainer/PortHBoxContainer/BaudRateOptionButton"
-onready var refreshButton = $"VBoxContainer/PortHBoxContainer/RefreshButton"
-onready var sendButton = $"VBoxContainer/SendVBoxContainer/SendHBoxContainer/SendButton"
-onready var sendLine = $"VBoxContainer/SendVBoxContainer/LineEdit"
-onready var endlineCheck = $"VBoxContainer/SendVBoxContainer/SendHBoxContainer/EndlineCheckBox"
-onready var readLabel = $"SerialReadRichTextLabel"
+@onready var portButton = $"VBoxContainer/PortHBoxContainer/PortOptionButton"
+@onready var baudButton = $"VBoxContainer/PortHBoxContainer/BaudRateOptionButton"
+@onready var refreshButton = $"VBoxContainer/PortHBoxContainer/RefreshButton"
+@onready var sendButton = $"VBoxContainer/SendVBoxContainer/SendHBoxContainer/SendButton"
+@onready var sendLine = $"VBoxContainer/SendVBoxContainer/LineEdit"
+@onready var endlineCheck = $"VBoxContainer/SendVBoxContainer/SendHBoxContainer/EndlineCheckBox"
+@onready var readLabel = $"SerialReadRichTextLabel"
 
 func _ready():
 	#adding the port and baudrate options
@@ -66,7 +66,7 @@ func _on_BaudRateOptionButton_item_selected(ID):
 	set_physics_process(true)
 
 func _on_LineEdit_gui_input(event):
-	if event is InputEventKey and event.scancode==KEY_ENTER:
+	if event is InputEventKey and event.keycode==KEY_ENTER:
 		if(sendLine.text!=""): #due to is_echo not working for some reason
 			send_text()
 

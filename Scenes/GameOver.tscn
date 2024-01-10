@@ -3,39 +3,39 @@
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
 
 [node name="Game over" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = 1.0
-margin_right = 1024.0
-margin_bottom = 603.0
+offset_top = 1.0
+offset_right = 1024.0
+offset_bottom = 603.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_bottom = 1.0
-margin_left = 332.0
-margin_top = 167.0
-margin_right = 409.0
-margin_bottom = 141.0
-rect_scale = Vector2( 4.51996, 5.60542 )
+offset_left = 332.0
+offset_top = 167.0
+offset_right = 409.0
+offset_bottom = 141.0
+scale = Vector2( 4.51996, 5.60542 )
 text = "Game Over "
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 320.0
-margin_top = 299.0
-margin_right = 504.0
-margin_bottom = 313.0
-rect_scale = Vector2( 2.05093, 3.23412 )
+offset_left = 320.0
+offset_top = 299.0
+offset_right = 504.0
+offset_bottom = 313.0
+scale = Vector2( 2.05093, 3.23412 )
 text = "You cannot give up just yet..."
 
 [node name="Play again" type="Button" parent="."]
-margin_left = 308.0
-margin_top = 290.0
-margin_right = 320.0
-margin_bottom = 310.0
-rect_scale = Vector2( 33.182, 3.09749 )
+offset_left = 308.0
+offset_top = 290.0
+offset_right = 320.0
+offset_bottom = 310.0
+scale = Vector2( 33.182, 3.09749 )
 flat = true
 
 [connection signal="pressed" from="Play again" to="." method="_on_Play_again_pressed"]

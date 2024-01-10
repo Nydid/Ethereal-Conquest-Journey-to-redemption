@@ -1,131 +1,73 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://cypkcq0r1rqgq"]
 
-[ext_resource path="res://Scenes/enemy_scene2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Art/earthstand.png" type="Texture" id=2]
-[ext_resource path="res://Art/floor.png" type="Texture" id=3]
-[ext_resource path="res://Art/background.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Ethereal Conquest2.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/playercontrol2.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Art/ourfinalgun.png" type="Texture" id=8]
+[ext_resource type="PackedScene" path="res://Scenes/enemy_scene2.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cqcwq2bs1xoqa" path="res://Art/earthstand.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cxpelbspwffyd" path="res://Art/floor.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ro6i2opute00" path="res://Art/background.png" id="4"]
+[ext_resource type="Script" path="res://Scripts/Ethereal Conquest2.gd" id="5"]
+[ext_resource type="Script" path="res://Scripts/playercontrol2.gd" id="6"]
+[ext_resource type="PackedScene" path="res://Scenes/bullet.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://ca7ac54ev2ou" path="res://Art/ourfinalgun.png" id="8"]
+[ext_resource type="PackedScene" uid="uid://bpw0px1mny0x1" path="res://Scenes/lives&ammo.tscn" id="8_0fwkp"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 37.9375, 49.125 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(75.875, 98.25)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 652.5, 39 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(1305, 78)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 625, 291 )
-script = ExtResource( 5 )
+position = Vector2(625, 291)
+script = ExtResource("5")
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( -404, -28 )
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-404, -28)
 collision_layer = 5
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+script = ExtResource("6")
 
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( -4.5, 28.8745 )
-scale = Vector2( 0.0729517, 0.0731106 )
-texture = ExtResource( 2 )
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-4.5, 28.8745)
+scale = Vector2(0.0729517, 0.0731106)
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -6.9375, 30.125 )
-shape = SubResource( 1 )
+position = Vector2(-6.9375, 30.125)
+shape = SubResource("1")
 
-[node name="Ourfinalgun" type="Sprite" parent="Player"]
+[node name="Ourfinalgun" type="Sprite2D" parent="Player"]
 show_behind_parent = true
-position = Vector2( 29.9982, -2.99954 )
-scale = Vector2( 0.0238712, 0.0248047 )
-texture = ExtResource( 8 )
+position = Vector2(29.9982, -2.99954)
+scale = Vector2(0.0238712, 0.0248047)
+texture = ExtResource("8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.8583, 0.731928 )
-current = true
-smoothing_enabled = true
+position = Vector2(0, 1)
+scale = Vector2(0.8583, 0.731928)
+position_smoothing_enabled = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( -57, 86 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+position = Vector2(-57, 86)
 
-[node name="Sprite" type="Sprite" parent="Floor"]
-position = Vector2( 11.5001, -0.25 )
-scale = Vector2( 0.978293, 0.993827 )
-texture = ExtResource( 3 )
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(11.5001, -0.25)
+scale = Vector2(0.978293, 0.993827)
+texture = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 10.5, 3 )
-shape = SubResource( 2 )
+position = Vector2(10.5, 3)
+shape = SubResource("2")
 
-[node name="Bullet" parent="." instance=ExtResource( 7 )]
-position = Vector2( -393, -12 )
+[node name="Bullet" parent="." instance=ExtResource("7")]
+position = Vector2(-393, -12)
 bulletSpeed = 50
 
-[node name="background" type="Sprite" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2( -67, -472 )
-scale = Vector2( 3.49626, 5.70984 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2(-67, -472)
+scale = Vector2(3.49626, 5.70984)
+texture = ExtResource("4")
 
-[node name="Lives&Ammo" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Lives&Ammo" parent="." instance=ExtResource("8_0fwkp")]
 
-[node name="health" type="Label" parent="Lives&Ammo"]
-margin_left = -319.0
-margin_top = 140.0
-margin_right = -309.0
-margin_bottom = 154.0
-rect_scale = Vector2( 5.15884, 4.46455 )
-text = "3"
-
-[node name="Vie" type="Label" parent="Lives&Ammo"]
-margin_left = -487.0
-margin_top = 139.0
-margin_right = -446.0
-margin_bottom = 153.0
-rect_scale = Vector2( 3.68148, 4.45052 )
-text = "Lives :"
-
-[node name="Ammo" type="Label" parent="Lives&Ammo"]
-margin_left = -496.0
-margin_top = 220.0
-margin_right = -445.0
-margin_bottom = 234.0
-rect_scale = Vector2( 3.60154, 4.23634 )
-text = "Ammo :"
-
-[node name="balle" type="Label" parent="Lives&Ammo"]
-margin_left = -305.0
-margin_top = 211.0
-margin_right = -295.0
-margin_bottom = 225.0
-rect_scale = Vector2( 4.90138, 5.65753 )
-text = "8"
-
-[node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 334, -28 )
-
-[node name="manual" type="Label" parent="."]
-margin_left = -40.0
-margin_top = 149.0
-margin_right = 124.0
-margin_bottom = 197.0
-rect_scale = Vector2( 2.40477, 2.73314 )
-text = "Shoot = Enter
-Crouch = Down Arrow Key
-Reload = Up Arrow Key"
+[node name="Player2" parent="." instance=ExtResource("1")]
+position = Vector2(334, -28)

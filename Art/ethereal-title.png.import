@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byci1six1qcgm"
-path="res://.godot/imported/Genfer.png-02da402665a59f488db3a4d7dd9991e8.ctex"
+uid="uid://brm14io187spy"
+path="res://.godot/imported/ethereal-title.png-0315768b20dd90cd523cad013d07760e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Genfer.png"
-dest_files=["res://.godot/imported/Genfer.png-02da402665a59f488db3a4d7dd9991e8.ctex"]
+source_file="res://Art/ethereal-title.png"
+dest_files=["res://.godot/imported/ethereal-title.png-0315768b20dd90cd523cad013d07760e.ctex"]
 
 [params]
 

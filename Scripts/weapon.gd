@@ -1,8 +1,8 @@
 extends Node2D
 
-export var fire_rate = 1007
-var ammo = 10
-var can_fire = true
+@export var fire_rate:int = 1007
+var ammo:int = 10
+var can_fire:bool = true
 
 func _ready():
 	$Timer.wait_time = fire_rate
@@ -14,13 +14,13 @@ func _on_Timer_timeout():
 	can_fire = true
 
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		fire()
 
 func fire():
 	if can_fire and ammo > 0:
 		var bullet_scene = preload("res://Scenes/bullet.tscn")
-		var bullet = bullet_scene.instance()
+		var bullet = bullet_scene.instantiate()
 		bullet.position = global_position + Vector2(20, 0)
 		get_parent().add_child(bullet)
 		ammo -= 1

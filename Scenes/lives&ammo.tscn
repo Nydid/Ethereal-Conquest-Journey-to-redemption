@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bpw0px1mny0x1"]
+
+[node name="Lives&Ammo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="health" type="Label" parent="."]
+layout_mode = 0
+offset_left = -305.0
+offset_top = 139.0
+offset_right = -295.0
+offset_bottom = 162.0
+scale = Vector2(5.15884, 4.46455)
+text = "3"
+
+[node name="Vie" type="Label" parent="."]
+layout_mode = 0
+offset_left = -487.0
+offset_top = 139.0
+offset_right = -446.0
+offset_bottom = 153.0
+scale = Vector2(3.68148, 4.45052)
+text = "Lives :"
+
+[node name="Ammo" type="Label" parent="."]
+layout_mode = 0
+offset_left = -496.0
+offset_top = 220.0
+offset_right = -445.0
+offset_bottom = 234.0
+scale = Vector2(3.60154, 4.23634)
+text = "Ammo :"
+
+[node name="balle" type="Label" parent="."]
+layout_mode = 0
+offset_left = -269.0
+offset_top = 211.0
+offset_right = -259.0
+offset_bottom = 234.0
+scale = Vector2(4.90138, 5.65753)
+text = "8"
+
+[node name="manual" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 118.0
+offset_right = 211.0
+offset_bottom = 193.0
+scale = Vector2(2.40477, 2.73314)
+text = "Shoot = Enter
+Crouch = Down Arrow Key
+Reload = Up Arrow Key"
